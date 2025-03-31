@@ -258,3 +258,127 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-03-31 15:41:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (16.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 17.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | GC: 0.0ms)
+Completed 200 OK in 53ms (Views: 19.1ms | ActiveRecord: 24.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2025-03-31 15:41:23 +0100
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 15:41:24 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (1.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2025-03-31 15:41:24 +0100
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 15:42:07 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 7.6ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 7.6ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2025-03-31 15:42:07 +0100
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2025-03-31 15:42:14 +0100
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2025-03-31 15:42:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new_entry" for 127.0.0.1 at 2025-03-31 15:44:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/new_entry"):
+  
+Started GET "/new_entry" for 127.0.0.1 at 2025-03-31 15:44:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/new_entry"):
+  
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 15:45:14 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.9ms | GC: 10.0ms)
+Completed 200 OK in 88ms (Views: 42.3ms | ActiveRecord: 17.4ms (0 queries, 0 cached) | GC: 10.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2025-03-31 15:45:14 +0100
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 15:50:38 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 3.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 15:51:51 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.8ms)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 3.5ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 15:51:53 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.5ms)
+
+
