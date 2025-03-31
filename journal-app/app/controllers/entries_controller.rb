@@ -16,10 +16,15 @@ class EntriesController < ApplicationController
             render :new
         end
     end
+
+    def destroy
+        Entry.find(params[:id]).destroy
+        redirect_to root_url
+    end
  
     private
  
     def entry_params
-        params.require(:entry).permit(:name)
+        params.require(:entry).permit(:name, :link)
     end
  end

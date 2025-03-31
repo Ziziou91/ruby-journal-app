@@ -382,3 +382,735 @@ Processing by EntriesController#index as HTML
 Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.5ms)
 
 
+Started POST "/entries" for 127.0.0.1 at 2025-03-31 16:11:47 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"name"=>"test"}, "commit"=>"Create Entry"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mEntry Create (1.7ms)[0m  [1m[32mINSERT INTO "entries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "test"], ["created_at", "2025-03-31 15:11:48.002542"], ["updated_at", "2025-03-31 15:11:48.002542"]]
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 52ms (ActiveRecord: 12.7ms (1 query, 0 cached) | GC: 20.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:11:48 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | GC: 0.1ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:11:49 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2025-03-31 16:11:55 +0100
+Processing by EntriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"name"=>"my entry"}, "commit"=>"Create Entry"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mEntry Create (4.0ms)[0m  [1m[32mINSERT INTO "entries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "my entry"], ["created_at", "2025-03-31 15:11:55.355329"], ["updated_at", "2025-03-31 15:11:55.355329"]]
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:11:55 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:11:58 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:12:01 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:12:02 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:12:02 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:12:03 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:12:04 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mEntry Load (1.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6608172671947612920)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddFieldnameToTablename (20250331151427)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "tablenames" ADD "fieldname" character varying[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6608172671947612920)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6608172671947612920)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddLinkToEntries (20250331153013)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "entries" ADD "link" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250331153013') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6608172671947612920)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:37:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (12.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 23.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 21.7ms | ActiveRecord: 26.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:37:14 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:38:24 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.7ms)
+Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 3.3ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2025-03-31 16:38:37 +0100
+Processing by EntriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"name"=>"test-2", "link"=>"test-link-2"}, "commit"=>"Create Entry"}
+[31mUnpermitted parameter: :link. Context: { controller: EntriesController, action: create, request: #<ActionDispatch::Request:0x0000000105cd1eb8>, params: {"authenticity_token"=>"[FILTERED]", "entry"=>{"name"=>"test-2", "link"=>"test-link-2"}, "commit"=>"Create Entry", "controller"=>"entries", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mEntry Create (2.9ms)[0m  [1m[32mINSERT INTO "entries" ("name", "created_at", "updated_at", "link") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test-2"], ["created_at", "2025-03-31 15:38:37.640372"], ["updated_at", "2025-03-31 15:38:37.640372"], ["link", nil]]
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 11ms (ActiveRecord: 4.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:37 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.1ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:38:39 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:54 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.5ms)
+Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 6.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:55 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (2.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 13.3ms | GC: 7.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | GC: 14.1ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 14.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:55 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 3.5ms | GC: 1.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 9.6ms)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:55 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 5.9ms | GC: 3.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 9.2ms)
+Completed 200 OK in 23ms (Views: 15.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:38:56 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (3.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 26.8ms | GC: 23.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | GC: 23.9ms)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 27.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:39:35 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | GC: 0.7ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:39:52 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 0.6ms)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 5.3ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:40:03 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.6ms)
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 5.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:41:18 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 4.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:41:19 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 4.4ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.4ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2025-03-31 16:41:26 +0100
+Processing by EntriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"name"=>"test-3", "link"=>"test-link-3"}, "commit"=>"Create Entry"}
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mEntry Create (6.3ms)[0m  [1m[32mINSERT INTO "entries" ("name", "created_at", "updated_at", "link") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "test-3"], ["created_at", "2025-03-31 15:41:26.743955"], ["updated_at", "2025-03-31 15:41:26.743955"], ["link", "test-link-3"]]
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/entries_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 9.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:41:26 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 16:41:27 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:46:47 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.5ms)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started DELETE "/entries/3" for 127.0.0.1 at 2025-03-31 16:46:50 +0100
+Processing by EntriesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/entries_controller.rb:21:in `destroy'
+  [1m[36mEntry Destroy (1.7ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/entries_controller.rb:21:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/entries_controller.rb:21:in `destroy'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 17ms (ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:46:50 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:47:00 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 8.1ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.5ms)
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:47:00 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:47:00 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:47:01 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.4ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:50:24 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.3ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-31 16:59:09 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-03-31 17:01:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (13.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 26.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 27.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
+        on line 17:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap";
+
+   ^
+):
+
+Causes:
+SassC::SyntaxError (Error: File to import not found or unreadable: bootstrap.
+        on line 17:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap";
+
+   ^
+)
+     6:    <%= csrf_meta_tags %>
+     7:    <%= csp_meta_tag %>
+     8: 
+     9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:    <%= javascript_importmap_tags %>
+    11:  </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/favicon.ico" for ::1 at 2025-03-31 17:01:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2025-03-31 17:03:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (15.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 28.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 30.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
+        on line 17:2 of app/assets/stylesheets/application.scss
+>>  @import "../../../../../bootstrap/scss/bootstrap";
+
+   -^
+):
+
+Causes:
+SassC::SyntaxError (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
+        on line 17:2 of app/assets/stylesheets/application.scss
+>>  @import "../../../../../bootstrap/scss/bootstrap";
+
+   -^
+)
+     6:    <%= csrf_meta_tags %>
+     7:    <%= csp_meta_tag %>
+     8: 
+     9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:    <%= javascript_importmap_tags %>
+    11:  </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2025-03-31 17:03:23 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 3.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 3.8ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
+        on line 17:2 of app/assets/stylesheets/application.scss
+>>  @import "../../../../../bootstrap/scss/bootstrap";
+
+   -^
+):
+
+Causes:
+SassC::SyntaxError (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
+        on line 17:2 of app/assets/stylesheets/application.scss
+>>  @import "../../../../../bootstrap/scss/bootstrap";
+
+   -^
+)
+     6:    <%= csrf_meta_tags %>
+     7:    <%= csp_meta_tag %>
+     8: 
+     9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:    <%= javascript_importmap_tags %>
+    11:  </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2025-03-31 17:04:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (10.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 22.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 22.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
+        on line 17:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap";
+
+   ^
+):
+
+Causes:
+SassC::SyntaxError (Error: File to import not found or unreadable: bootstrap.
+        on line 17:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap";
+
+   ^
+)
+     6:    <%= csrf_meta_tags %>
+     7:    <%= csp_meta_tag %>
+     8: 
+     9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:    <%= javascript_importmap_tags %>
+    11:  </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2025-03-31 17:17:02 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (13.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 25.7ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 650.0ms | GC: 59.2ms)
+Completed 200 OK in 675ms (Views: 626.1ms | ActiveRecord: 26.5ms (1 query, 0 cached) | GC: 67.2ms)
+
+
+Started GET "/" for ::1 at 2025-03-31 17:18:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (9.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 25.5ms | GC: 0.6ms)
+Started GET "/" for ::1 at 2025-03-31 17:18:03 +0100
+Started GET "/" for ::1 at 2025-03-31 17:18:03 +0100
+Processing by EntriesController#index as HTML
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (3.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.1ms)
+  [1m[36mEntry Load (82.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 84.3ms | GC: 0.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7014.4ms | GC: 80.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4844.7ms | GC: 49.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4845.4ms | GC: 49.4ms)
+Completed 200 OK in 7025ms (Views: 6994.9ms | ActiveRecord: 21.2ms (1 query, 0 cached) | GC: 80.5ms)
+
+
+Completed 200 OK in 4846ms (Views: 4728.4ms | ActiveRecord: 116.7ms (1 query, 0 cached) | GC: 49.4ms)
+
+
+Completed 200 OK in 4846ms (Views: 4842.8ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 49.4ms)
+
+
+Started GET "/" for ::1 at 2025-03-31 17:18:08 +0100
+Started GET "/" for ::1 at 2025-03-31 17:18:08 +0100
+Started GET "/" for ::1 at 2025-03-31 17:18:08 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+Processing by EntriesController#index as HTML
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (1.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  Rendering layout layouts/application.html.erb
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mEntry Load (1.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  Rendering entries/index.html.erb within layouts/application
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mEntry Load (1.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered entries/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.6ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.6ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | GC: 0.6ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/entries/new" for ::1 at 2025-03-31 17:18:33 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 17.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2389.8ms | GC: 0.0ms)
+Completed 200 OK in 2392ms (Views: 2390.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/entries/new" for ::1 at 2025-03-31 17:19:19 +0100
+Processing by EntriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.9ms)
+Completed 200 OK in 25ms (Views: 9.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.7ms)
+
+
