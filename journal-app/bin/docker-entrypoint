@@ -1,5 +1,27 @@
 #!/bin/bash -e
 
+#Launch db
+sudo service postgresql start
+
+# Wait for PostgreSQL to start
+until pg_isready; do
+  echo "Waiting for PostgreSQL to start..."
+  sleep 1
+done
+
+# Create PostgreSQL role for the current user if it doesn't exist
+# We'll use the postgres user to create our role
+sudo -u postgres psql -c "CREATE ROLE root WITH LOGIN CREATEDB SUPERUSER PASSWORD 'password';" || true
+
+# Now we can connect and create our database
+PGPASSWORD=password psql -U root -h localhost -c "SELECT 1;" postgres || true
+
+rails db:create
+
+# Run pending migrations
+echo "Running database migrations..."
+rails db:migrate
+
 # Enable jemalloc for reduced memory usage and latency.
 if [ -z "${LD_PRELOAD+x}" ] && [ -f /usr/lib/*/libjemalloc.so.2 ]; then
   export LD_PRELOAD="$(echo /usr/lib/*/libjemalloc.so.2)"

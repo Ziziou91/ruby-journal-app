@@ -12,10 +12,11 @@ RUN apt-get update && apt-get install -y \
     procps \
     sudo \
     wget \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
-
-# Install dependencies including postgresql
+# Install base packages
 RUN apt-get update && apt-get install -y \
     sqlite3 \
     libsqlite3-dev \
@@ -24,19 +25,17 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Ruby gems for development
-RUN gem install \
-    bundler \
-    rails \
-    rspec \
-    rubocop \
-    pry \
-    solargraph
 
 # Create directory for application
 RUN mkdir /home/app
-WORKDIR /home/app
-COPY ruby_script.rb /home/app/ruby_script.rb
+ADD ./journal-app /home/app/journal-app
+WORKDIR /home/app/journal-app
 
-# Default command
-CMD ["ruby", "ruby_script.rb"]
+# Install Ruby gems for development
+RUN gem install bundler && bundle install --jobs=3 --retry=3 
+
+# Entrypoint prepares the database.
+ENTRYPOINT ["./bin/docker-entrypoint"]
+
+# Launch the server
+CMD ["rails", "server", "-b", "0.0.0.0"]
