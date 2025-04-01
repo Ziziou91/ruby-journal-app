@@ -1,0 +1,24 @@
+<h1><%=@entry.name%></h1>
+
+<%= form_with(model: @entry, method: :patch) do |form| %>
+  <div>
+    <%= @entry.name %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br/>
+    <%= @entry.link %>
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+  
+  <div>
+    <%= form.submit "Update Entry" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to entries", entries_path %>
+  <%= link_to "Show this entry", @entry %>
+</div>

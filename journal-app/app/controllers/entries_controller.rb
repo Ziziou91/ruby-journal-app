@@ -17,9 +17,23 @@ class EntriesController < ApplicationController
         end
     end
 
+    def show
+        @entry = Entry.find(params[:id])
+
+    end
+
     def destroy
         Entry.find(params[:id]).destroy
         redirect_to root_url
+    end
+
+    def update
+        @entry = Entry.find(params[:id])
+        if @entry.update(entry_params)
+          redirect_to @entry, notice: "Entry successfully updated."
+        else
+          render :edit
+        end
     end
  
     private
@@ -27,4 +41,6 @@ class EntriesController < ApplicationController
     def entry_params
         params.require(:entry).permit(:name, :link)
     end
+
+    
  end
