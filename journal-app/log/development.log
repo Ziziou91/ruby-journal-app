@@ -4924,3 +4924,291 @@ Processing by EntriesController#show as HTML
 Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 1.2ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6608172671947612920)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DeviseCreateUsers (20250401151657)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp(6), "last_sign_in_at" timestamp(6), "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp(6), "confirmation_sent_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250401151657') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6608172671947612920)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-04-01 16:46:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (16.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 5.3ms | GC: 0.2ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 36.4ms | GC: 0.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | GC: 2.4ms)
+Completed 200 OK in 117ms (Views: 47.2ms | ActiveRecord: 33.5ms (1 query, 0 cached) | GC: 21.1ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:46:43 +0100
+Processing by EntriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 3.5ms | GC: 0.0ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:48:16 +0100
+  
+ActionController::RoutingError (uninitialized constant HomeController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant HomeController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^)
+NameError (uninitialized constant HomeController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^)
+  
+Started GET "/entries" for ::1 at 2025-04-01 16:48:47 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/entries" for ::1 at 2025-04-01 16:49:00 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/entries"):
+  
+Started GET "/" for ::1 at 2025-04-01 16:52:27 +0100
+Processing by EntriesController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-01 16:52:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.5ms)
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 5.1ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-04-01 16:52:30 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2025-04-01 16:52:46 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["created_at", "2025-04-01 15:52:46.739522"], ["updated_at", "2025-04-01 15:52:46.739522"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 519ms (ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:52:46 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 0.8ms | GC: 0.1ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:52:49 +0100
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 1.1ms | GC: 0.2ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.5ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:52:50 +0100
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 2.1ms | GC: 0.0ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.4ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:52:53 +0100
+Processing by EntriesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-01 16:52:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-04-01 16:52:58 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 304ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:52:59 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 0.7ms | GC: 0.1ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/entries/new" for ::1 at 2025-04-01 16:53:00 +0100
+Processing by EntriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-01 16:53:00 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 16:53:00 +0100
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 0.9ms | GC: 0.1ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 17:01:39 +0100
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (1.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 2.1ms | GC: 0.0ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.4ms)
+Completed 200 OK in 27ms (Views: 9.5ms | ActiveRecord: 6.5ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 17:01:46 +0100
+Processing by EntriesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-01 17:01:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/password/new" for ::1 at 2025-04-01 17:01:46 +0100
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-04-01 17:01:53 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 293ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-04-01 17:01:53 +0100
+Processing by EntriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:3
+  Rendered collection of shared/_entry.html.erb [5 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered entries/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 2.6ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 2.7ms)
+
+
