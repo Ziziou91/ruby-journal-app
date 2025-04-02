@@ -8,6 +8,4 @@ done
 docker build -t journal-app:latest .
 
 # Run journal-app docker image
-CONTAINER_ID=$(docker run -e RAILS_ENV=development -p 3000:3000 -dit journal-app:latest)
-
-echo "New container started with ID: $CONTAINER_ID"
+docker run -e RAILS_ENV=development -p 3000:3000 -dit journal-app:latest
