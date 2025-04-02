@@ -10,3 +10,11 @@ repos:
     rev: v1.75.1
     hooks:
       - id: rubocop
+
+  - repo: local
+    hooks:
+      - id: build-docker-image-sh
+        name: build-docker-image-sh
+        entry: build-docker-image.sh
+        language: script
+        pass_filenames: false
