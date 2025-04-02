@@ -18,3 +18,4 @@ repos:
         entry: build-docker-image.sh
         language: script
         pass_filenames: false
+        always_run: true
