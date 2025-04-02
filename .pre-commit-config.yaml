@@ -17,5 +17,6 @@ repos:
         name: build-docker-image-sh
         entry: build-docker-image.sh
         language: script
+        types : [file]
         pass_filenames: false
         always_run: true
