@@ -1,8 +1,6 @@
 #!/bin/bash
 until ! lsof -i :3000; do
   docker kill  $(docker ps -q --filter "expose=3000")
-
-  echo "Waiting for port 3000 to be free..."
   sleep 1
 done
 
