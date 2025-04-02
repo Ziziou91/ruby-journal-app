@@ -5,7 +5,7 @@ until ! lsof -i :3000; do
 done
 
 # Build journal-app docker image
-docker build -t journal-app:latest .
+docker build --platform linux/amd64 -t zizou91/journal-app:latest .
 
 # Run journal-app docker image
-docker run -e RAILS_ENV=development -p 3000:3000 -dit journal-app:latest
+docker run -e RAILS_ENV=development -p 3000:3000 -dit zizou91/journal-app:latest
