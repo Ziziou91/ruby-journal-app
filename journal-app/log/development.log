@@ -34,9 +34,9 @@ Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 
 
 Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-31 14:46:45 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
-  
+
 Started GET "/" for 127.0.0.1 at 2025-03-31 15:07:05 +0100
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by ApplicationController#hello as HTML
@@ -70,9 +70,9 @@ Processing by EntriesController#index as HTML
 Completed 406 Not Acceptable in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionController::MissingExactTemplate (EntriesController#index is missing a template for request formats: text/html):
-  
+
 actionpack (7.2.2.1) lib/action_controller/metal/implicit_render.rb:49:in `default_render'
 actionpack (7.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:9:in `send_action'
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:226:in `process_action'
@@ -158,9 +158,9 @@ Processing by EntriesController#index as HTML
 Completed 406 Not Acceptable in 16ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
-  
+
 ActionController::MissingExactTemplate (EntriesController#index is missing a template for request formats: text/html):
-  
+
 actionpack (7.2.2.1) lib/action_controller/metal/implicit_render.rb:49:in `default_render'
 actionpack (7.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:9:in `send_action'
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:226:in `process_action'
@@ -321,18 +321,18 @@ Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached
 
 
 Started GET "/new" for 127.0.0.1 at 2025-03-31 15:42:30 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/new"):
-  
+
 Started GET "/new_entry" for 127.0.0.1 at 2025-03-31 15:44:10 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/new_entry"):
-  
+
 Started GET "/new_entry" for 127.0.0.1 at 2025-03-31 15:44:41 +0100
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/new_entry"):
-  
+
 Started GET "/entries/new" for 127.0.0.1 at 2025-03-31 15:45:14 +0100
 Processing by EntriesController#new as HTML
   Rendering layout layouts/application.html.erb
@@ -873,7 +873,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 53ms (ActiveRecord: 27.8ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
         on line 17:1 of app/assets/stylesheets/application.scss
 >> @import "bootstrap";
@@ -890,17 +890,17 @@ SassC::SyntaxError (Error: File to import not found or unreadable: bootstrap.
 )
      6:    <%= csrf_meta_tags %>
      7:    <%= csp_meta_tag %>
-     8: 
+     8:
      9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     10:    <%= javascript_importmap_tags %>
     11:  </head>
-    12: 
-  
+    12:
+
 app/views/layouts/application.html.erb:9
 Started GET "/favicon.ico" for ::1 at 2025-03-31 17:01:18 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
-  
+
 Started GET "/" for ::1 at 2025-03-31 17:03:22 +0100
   [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by EntriesController#index as HTML
@@ -913,7 +913,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 55ms (ActiveRecord: 30.5ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
         on line 17:2 of app/assets/stylesheets/application.scss
 >>  @import "../../../../../bootstrap/scss/bootstrap";
@@ -930,12 +930,12 @@ SassC::SyntaxError (Error: File to import not found or unreadable: ../../../../.
 )
      6:    <%= csrf_meta_tags %>
      7:    <%= csp_meta_tag %>
-     8: 
+     8:
      9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     10:    <%= javascript_importmap_tags %>
     11:  </head>
-    12: 
-  
+    12:
+
 app/views/layouts/application.html.erb:9
 Started GET "/" for ::1 at 2025-03-31 17:03:23 +0100
 Processing by EntriesController#index as HTML
@@ -948,7 +948,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 3.8ms)
 
 
-  
+
 ActionView::Template::Error (Error: File to import not found or unreadable: ../../../../../bootstrap/scss/bootstrap.
         on line 17:2 of app/assets/stylesheets/application.scss
 >>  @import "../../../../../bootstrap/scss/bootstrap";
@@ -965,12 +965,12 @@ SassC::SyntaxError (Error: File to import not found or unreadable: ../../../../.
 )
      6:    <%= csrf_meta_tags %>
      7:    <%= csp_meta_tag %>
-     8: 
+     8:
      9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     10:    <%= javascript_importmap_tags %>
     11:  </head>
-    12: 
-  
+    12:
+
 app/views/layouts/application.html.erb:9
 Started GET "/" for ::1 at 2025-03-31 17:04:37 +0100
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -984,7 +984,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 41ms (ActiveRecord: 22.6ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
         on line 17:1 of app/assets/stylesheets/application.scss
 >> @import "bootstrap";
@@ -1001,12 +1001,12 @@ SassC::SyntaxError (Error: File to import not found or unreadable: bootstrap.
 )
      6:    <%= csrf_meta_tags %>
      7:    <%= csp_meta_tag %>
-     8: 
+     8:
      9:    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     10:    <%= javascript_importmap_tags %>
     11:  </head>
-    12: 
-  
+    12:
+
 app/views/layouts/application.html.erb:9
 Started GET "/" for ::1 at 2025-03-31 17:17:02 +0100
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -1195,7 +1195,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 48ms (ActiveRecord: 28.6ms (1 query, 0 cached) | GC: 1.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `edit_entry_path' for #<ActionView::Base:0x0000000000bfe0>):
 
 Causes:
@@ -1205,9 +1205,9 @@ NameError (undefined local variable or method `edit_entry_path' for #<ActionView
     3:   <%= entry.link %>
     4:   <%= link_to "Edit Entry", edit_entry_path %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
-    6:   
+    6:
     7: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/entries/new" for ::1 at 2025-04-01 14:43:19 +0100
@@ -1232,7 +1232,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 18ms (ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `edit_entry_path' for #<ActionView::Base:0x0000000000fbb8>):
 
 Causes:
@@ -1243,7 +1243,7 @@ NameError (undefined local variable or method `edit_entry_path' for #<ActionView
     4:   <%= link_to "Edit Entry", edit_entry_path %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:49:23 +0100
@@ -1258,7 +1258,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries"}, missing required keys: [:id]
 Did you mean?  edit_entry_url):
 
@@ -1271,7 +1271,7 @@ Did you mean?  edit_entry_url)
     4:   <%= link_to "Edit Entry", edit_entry_path %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:50:09 +0100
@@ -1286,7 +1286,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 13ms (ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 2.3ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1297,7 +1297,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:50:10 +0100
@@ -1312,7 +1312,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1323,7 +1323,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:50:11 +0100
@@ -1338,7 +1338,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1349,7 +1349,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:50:12 +0100
@@ -1364,7 +1364,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.1ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1375,18 +1375,18 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:51:21 +0100
-  
+
 SyntaxError (/Users/joshuagray/Documents/grad-training/ruby-journal-app/journal-app/app/controllers/entries_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'):
-  
+
 app/controllers/entries_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
 Started GET "/" for ::1 at 2025-04-01 14:51:22 +0100
-  
+
 SyntaxError (/Users/joshuagray/Documents/grad-training/ruby-journal-app/journal-app/app/controllers/entries_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'):
-  
+
 app/controllers/entries_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
 Started GET "/" for ::1 at 2025-04-01 14:51:32 +0100
 Processing by EntriesController#index as HTML
@@ -1400,7 +1400,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 17ms (ActiveRecord: 7.5ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1411,7 +1411,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:51:33 +0100
@@ -1426,7 +1426,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries", :id=>nil}, missing required keys: [:id]):
 
 Causes:
@@ -1437,7 +1437,7 @@ ActionController::UrlGenerationError (No route matches {:action=>"edit", :contro
     4:   <%= link_to "Edit Entry", edit_entry_path(@entry) %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:51:47 +0100
@@ -1452,7 +1452,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"entries"}, missing required keys: [:id]
 Did you mean?  edit_entry_url):
 
@@ -1465,7 +1465,7 @@ Did you mean?  edit_entry_url)
     4:   <%= link_to "Edit Entry", edit_entry_path %>
     5:   <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
     6: </div>
-  
+
 app/views/shared/_entry.html.erb:4
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:13 +0100
@@ -1480,7 +1480,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.3ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1500,7 +1500,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:16 +0100
@@ -1515,7 +1515,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1535,7 +1535,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:19 +0100
@@ -1550,7 +1550,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1570,7 +1570,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:19 +0100
@@ -1585,7 +1585,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1605,7 +1605,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:45 +0100
@@ -1620,7 +1620,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 10ms (ActiveRecord: 5.7ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1640,7 +1640,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:46 +0100
@@ -1655,7 +1655,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1675,7 +1675,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:51 +0100
@@ -1690,7 +1690,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1710,7 +1710,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:52:52 +0100
@@ -1725,7 +1725,7 @@ Processing by EntriesController#index as HTML
 Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="entry">
   <%= entry.name %>
   <%= entry.link %>
@@ -1745,7 +1745,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 4:      <%= link_to "Edit Entry", entry, method :edit %>
 5:      <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
 6:    </div>
-  
+
 app/views/shared/_entry.html.erb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
 app/views/entries/index.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 14:53:12 +0100
@@ -1762,37 +1762,37 @@ Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 3.1ms (1 query, 0 cached
 
 
 Started GET "/entries/4" for ::1 at 2025-04-01 14:53:13 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:45 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:45 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:46 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:46 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:46 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:46 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:46 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/" for ::1 at 2025-04-01 14:55:55 +0100
 Processing by EntriesController#index as HTML
   Rendering layout layouts/application.html.erb
@@ -1807,25 +1807,25 @@ Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 5.5ms (1 query, 0 cached
 
 
 Started GET "/entries/2" for ::1 at 2025-04-01 14:55:56 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/2"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 14:55:57 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/1"):
-  
+
 Started GET "/entries/4" for ::1 at 2025-04-01 14:55:59 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/4"):
-  
+
 Started GET "/entries/5" for ::1 at 2025-04-01 14:55:59 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/5"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 14:56:00 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/1"):
-  
+
 Started GET "/" for ::1 at 2025-04-01 14:56:03 +0100
 Processing by EntriesController#index as HTML
   Rendering layout layouts/application.html.erb
@@ -1840,9 +1840,9 @@ Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms (1 query, 0 cached
 
 
 Started GET "/entries/1" for ::1 at 2025-04-01 14:56:04 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/1"):
-  
+
 Started GET "/" for ::1 at 2025-04-01 14:56:05 +0100
 Processing by EntriesController#index as HTML
   Rendering layout layouts/application.html.erb
@@ -1857,13 +1857,13 @@ Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.9ms (1 query, 0 cached)
 
 
 Started GET "/entries/1" for ::1 at 2025-04-01 14:56:06 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/1"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 14:56:55 +0100
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -1921,9 +1921,9 @@ puma (6.6.0) lib/puma/server.rb:472:in `process_client'
 puma (6.6.0) lib/puma/server.rb:254:in `block in run'
 puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
 Started GET "/entries/1" for ::1 at 2025-04-01 14:56:56 +0100
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -1981,9 +1981,9 @@ puma (6.6.0) lib/puma/server.rb:472:in `process_client'
 puma (6.6.0) lib/puma/server.rb:254:in `block in run'
 puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
 Started GET "/entries/1" for ::1 at 2025-04-01 14:57:35 +0100
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -2048,9 +2048,9 @@ Processing by EntriesController#show as HTML
 Completed 406 Not Acceptable in 8ms (ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.2ms)
 
 
-  
+
 ActionController::MissingExactTemplate (EntriesController#show is missing a template for request formats: text/html):
-  
+
 actionpack (7.2.2.1) lib/action_controller/metal/implicit_render.rb:49:in `default_render'
 actionpack (7.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:9:in `send_action'
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:226:in `process_action'
@@ -2312,7 +2312,7 @@ Processing by EntriesController#show as HTML
 Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `entry' for #<ActionView::Base:0x0000000004e228>
 Did you mean?  @entry
                retry):
@@ -2321,14 +2321,14 @@ Causes:
 NameError (undefined local variable or method `entry' for #<ActionView::Base:0x0000000004e228>
 Did you mean?  @entry
                retry)
-    2: 
+    2:
     3: <%= form_with(model: @entry) do |form| %>
     4:   <div>
     5:     <%= entry.name %>
     6:     <%= form.label :name %>
     7:     <%= form.text_field :name %>
-    8:     
-  
+    8:
+
 app/views/entries/show.html.erb:5
 app/views/entries/show.html.erb:3
 Started GET "/entries/1" for ::1 at 2025-04-01 14:59:53 +0100
@@ -2343,7 +2343,7 @@ Processing by EntriesController#show as HTML
 Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.9ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `entry' for #<ActionView::Base:0x0000000004e4f8>
 Did you mean?  @entry
                retry):
@@ -2352,14 +2352,14 @@ Causes:
 NameError (undefined local variable or method `entry' for #<ActionView::Base:0x0000000004e4f8>
 Did you mean?  @entry
                retry)
-    2: 
+    2:
     3: <%= form_with(model: @entry) do |form| %>
     4:   <div>
     5:     <%= entry.name %>
     6:     <%= form.label :name %>
     7:     <%= form.text_field :name %>
-    8:     
-  
+    8:
+
 app/views/entries/show.html.erb:5
 app/views/entries/show.html.erb:3
 Started GET "/entries/1" for ::1 at 2025-04-01 15:00:07 +0100
@@ -2425,9 +2425,9 @@ Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.3ms (1 query, 0 cached
 
 
 Started PATCH "/entries/1" for ::1 at 2025-04-01 15:00:21 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/1"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 15:00:21 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"1"}
@@ -2468,9 +2468,9 @@ Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.3ms (1 query, 0 cached)
 
 
 Started PATCH "/entries/1" for ::1 at 2025-04-01 15:00:28 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/1"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 15:00:28 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"1"}
@@ -2687,13 +2687,13 @@ Completed 200 OK in 20ms (Views: 12.7ms | ActiveRecord: 0.4ms (1 query, 0 cached
 
 
 Started GET "/entries/6" for ::1 at 2025-04-01 15:02:17 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:02:18 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:03:10 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -2760,9 +2760,9 @@ Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.2ms (1 query, 0 cached
 
 
 Started PATCH "/entries/6" for ::1 at 2025-04-01 15:03:30 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:03:30 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -2814,19 +2814,19 @@ Processing by EntriesController#show as HTML
 Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `update' for #<ActionView::Helpers::FormBuilder:0x000000011892ce58 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x00000000062228>, @object=#<Entry id: 1, name: "test", created_at: "2025-03-31 15:11:48.002542000 +0000", updated_at: "2025-03-31 15:11:48.002542000 +0000", link: nil>, @object_name="entry", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>):
 
 Causes:
 NoMethodError (undefined method `update' for #<ActionView::Helpers::FormBuilder:0x000000011892ce58 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x00000000062228>, @object=#<Entry id: 1, name: "test", created_at: "2025-03-31 15:11:48.002542000 +0000", updated_at: "2025-03-31 15:11:48.002542000 +0000", link: nil>, @object_name="entry", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>)
     12:   </div>
-    13:   
+    13:
     14:   <div>
     15:     <%= form.update "Update Entry" %>
     16:   </div>
     17: <% end %>
-    18: 
-  
+    18:
+
 app/views/entries/show.html.erb:15
 app/views/entries/show.html.erb:3
 Started GET "/" for ::1 at 2025-04-01 15:04:09 +0100
@@ -2892,9 +2892,9 @@ Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.2ms (1 query, 0 cached)
 
 
 Started PATCH "/entries/6" for ::1 at 2025-04-01 15:05:31 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:05:32 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -2945,9 +2945,9 @@ Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.2ms (1 query, 0 cached)
 
 
 Started GET "/entries" for ::1 at 2025-04-01 15:05:35 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:05:40 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -3128,9 +3128,9 @@ Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.6ms (1 query, 0 cached
 
 
 Started PATCH "/entries/6" for ::1 at 2025-04-01 15:05:51 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:05:51 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -3207,9 +3207,9 @@ Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) 
 
 
 Started PATCH "/entries/6" for ::1 at 2025-04-01 15:06:44 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:06:44 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -3273,9 +3273,9 @@ Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) 
 
 
 Started PATCH "/entries/6" for ::1 at 2025-04-01 15:06:59 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/6"):
-  
+
 Started GET "/entries/6" for ::1 at 2025-04-01 15:06:59 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"6"}
@@ -3316,9 +3316,9 @@ Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.2ms (1 query, 0 cached)
 
 
 Started PATCH "/entries/1" for ::1 at 2025-04-01 15:07:18 +0100
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/entries/1"):
-  
+
 Started GET "/entries/1" for ::1 at 2025-04-01 15:07:18 +0100
 Processing by EntriesController#show as HTML
   Parameters: {"id"=>"1"}
@@ -3677,9 +3677,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:15 +0100
@@ -3703,9 +3703,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 6ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:16 +0100
@@ -3729,9 +3729,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 2ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:16 +0100
@@ -3755,9 +3755,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:17 +0100
@@ -3781,9 +3781,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:18 +0100
@@ -3807,9 +3807,9 @@ Processing by EntriesController#update as TURBO_STREAM
 Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: entry):
-  
+
 app/controllers/entries_controller.rb:42:in `entry_params'
 app/controllers/entries_controller.rb:32:in `update'
 Started GET "/" for ::1 at 2025-04-01 15:11:18 +0100
@@ -3839,9 +3839,9 @@ Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 3.5ms (1 query, 0 cached
 
 
 Started GET "/entries/1/edit" for ::1 at 2025-04-01 15:11:56 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -3899,9 +3899,9 @@ puma (6.6.0) lib/puma/server.rb:472:in `process_client'
 puma (6.6.0) lib/puma/server.rb:254:in `block in run'
 puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
 Started GET "/entries/1/edit" for ::1 at 2025-04-01 15:12:09 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -3959,9 +3959,9 @@ puma (6.6.0) lib/puma/server.rb:472:in `process_client'
 puma (6.6.0) lib/puma/server.rb:254:in `block in run'
 puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
 Started GET "/entries/1/edit" for ::1 at 2025-04-01 15:12:10 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -4113,9 +4113,9 @@ Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 4.0ms (1 query, 0 cached
 
 
 Started GET "/entries/4/edit" for ::1 at 2025-04-01 15:13:27 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -4186,9 +4186,9 @@ Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) 
 
 
 Started GET "/entries/4/edit" for ::1 at 2025-04-01 15:13:28 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -4259,9 +4259,9 @@ Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) 
 
 
 Started GET "/entries/4/edit" for ::1 at 2025-04-01 15:13:28 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -4332,9 +4332,9 @@ Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) 
 
 
 Started GET "/entries/4/edit" for ::1 at 2025-04-01 15:13:28 +0100
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for EntriesController):
-  
+
 actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
 actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
 actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
@@ -4509,9 +4509,9 @@ Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.2ms (1 query, 0 cached)
 
 
 Started GET "/entries" for ::1 at 2025-04-01 15:13:49 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries"):
-  
+
 Started GET "/entries/new" for ::1 at 2025-04-01 15:13:50 +0100
 Processing by EntriesController#new as HTML
   Rendering layout layouts/application.html.erb
@@ -4638,7 +4638,7 @@ Processing by EntriesController#show as HTML
 Completed 500 Internal Server Error in 270ms (ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Entry <%=@entry.name</h1>
 
 <%= form_with(model: @entry, method: :patch) do |form| %>
@@ -4651,7 +4651,7 @@ ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering te
     <%= form.label :link %>
     <%= form.text_field :link %>
   </div>
-  
+
   <div>
     <%= form.submit "Update Entry" %>
   </div>
@@ -4690,7 +4690,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
              ^
 )
 1:    <h1>Entry <%=@entry.name</h1>
-2:    
+2:
 3:    <%= form_with(model: @entry, method: :patch) do |form| %>
 4:      <div>
 5:        <%= @entry.name %>
@@ -4701,19 +4701,19 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 10:        <%= form.label :link %>
 11:        <%= form.text_field :link %>
 12:      </div>
-13:      
+13:
 14:      <div>
 15:        <%= form.submit "Update Entry" %>
 16:      </div>
 17:    <% end %>
-18:    
+18:
 19:    <br>
-20:    
+20:
 21:    <div>
 22:      <%= link_to "Back to entries", entries_path %>
 23:      <%= link_to "Show this entry", @entry %>
 24:    </div>
-  
+
 app/views/entries/show.html.erb:12: syntax error, unexpected '<', expecting `end'
 app/views/entries/show.html.erb:16: unknown regexp options - dv
 app/views/entries/show.html.erb:19: syntax error, unexpected '<', expecting `end'
@@ -4734,7 +4734,7 @@ Processing by EntriesController#show as HTML
 Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.4ms)
 
 
-  
+
 ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Entry <%=@entry.name</h1>
 
 <%= form_with(model: @entry, method: :patch) do |form| %>
@@ -4747,7 +4747,7 @@ ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering te
     <%= form.label :link %>
     <%= form.text_field :link %>
   </div>
-  
+
   <div>
     <%= form.submit "Update Entry" %>
   </div>
@@ -4786,7 +4786,7 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
              ^
 )
 1:    <h1>Entry <%=@entry.name</h1>
-2:    
+2:
 3:    <%= form_with(model: @entry, method: :patch) do |form| %>
 4:      <div>
 5:        <%= @entry.name %>
@@ -4797,19 +4797,19 @@ ActiveSupport::SyntaxErrorProxy (/Users/joshuagray/Documents/grad-training/ruby-
 10:        <%= form.label :link %>
 11:        <%= form.text_field :link %>
 12:      </div>
-13:      
+13:
 14:      <div>
 15:        <%= form.submit "Update Entry" %>
 16:      </div>
 17:    <% end %>
-18:    
+18:
 19:    <br>
-20:    
+20:
 21:    <div>
 22:      <%= link_to "Back to entries", entries_path %>
 23:      <%= link_to "Show this entry", @entry %>
 24:    </div>
-  
+
 app/views/entries/show.html.erb:12: syntax error, unexpected '<', expecting `end'
 app/views/entries/show.html.erb:16: unknown regexp options - dv
 app/views/entries/show.html.erb:19: syntax error, unexpected '<', expecting `end'
@@ -4964,7 +4964,7 @@ Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.7ms (1 query, 0 cached
 
 
 Started GET "/" for ::1 at 2025-04-01 16:48:16 +0100
-  
+
 ActionController::RoutingError (uninitialized constant HomeController
 
       Object.const_get(camel_cased_word)
@@ -4985,17 +4985,17 @@ NameError (uninitialized constant HomeController
 
       Object.const_get(camel_cased_word)
             ^^^^^^^^^^)
-  
+
 Started GET "/entries" for ::1 at 2025-04-01 16:48:47 +0100
-  
+
 ArgumentError (Missing :controller key on routes definition, please check your routes.):
-  
+
 config/routes.rb:7:in `block in <main>'
 config/routes.rb:1:in `<main>'
 Started GET "/entries" for ::1 at 2025-04-01 16:49:00 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/entries"):
-  
+
 Started GET "/" for ::1 at 2025-04-01 16:52:27 +0100
 Processing by EntriesController#index as HTML
 Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
@@ -5210,5 +5210,18 @@ Processing by EntriesController#index as TURBO_STREAM
   Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
   Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 2.6ms)
 Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 2.7ms)
+Started GET "/" for ::1 at 2025-04-02 10:26:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 18.2ms)
 
 
+Started GET "/users/sign_in" for ::1 at 2025-04-02 10:26:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /Users/joshuagray/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 56.3ms | GC: 1.5ms)
+Completed 200 OK in 97ms (Views: 60.7ms | ActiveRecord: 19.5ms (0 queries, 0 cached) | GC: 2.3ms)

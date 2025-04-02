@@ -32,7 +32,7 @@ ADD ./journal-app /home/app/journal-app
 WORKDIR /home/app/journal-app
 
 # Install Ruby gems for development
-RUN gem install bundler && bundle install --jobs=3 --retry=3 
+RUN gem install bundler && bundle install --jobs=3 --retry=3
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["./bin/docker-entrypoint"]
