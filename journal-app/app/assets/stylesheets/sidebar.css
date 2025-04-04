@@ -1,0 +1,26 @@
+/* app/assets/stylesheets/sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 45px;
+    left: 0;
+    width: 250px;
+    height: calc(100% - 60px);  /* Full height minus navbar height */
+    background-color: #333;
+    color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);  /* Initially hidden */
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+
+}
+
+.sidebar.hidden {
+    display: none;
+    transition: transform 0.3s ease;
+}
