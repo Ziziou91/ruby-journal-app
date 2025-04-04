@@ -14,3 +14,45 @@
  *= require_self
  */
  @import "bootstrap";
+
+body {
+background-color: #648FFF;
+}
+
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+
+    .left-col {
+      flex: 0 0 16.6667%; // 2/12 columns
+      text-align: left;
+    }
+
+    .center-col {
+      flex: 0 0 66.6667%; // 8/12 columns
+      text-align: center;
+    }
+
+    .right-col {
+      flex: 0 0 16.6667%; // 2/12 columns
+      text-align: right;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+
+      .left-col, .right-col {
+        flex: 100%;
+        text-align: center;
+      }
+    }
+}
