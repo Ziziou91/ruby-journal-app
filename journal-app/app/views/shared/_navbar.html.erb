@@ -4,7 +4,9 @@
   </div>
   <div class="center-col">
     <%= link_to "Create new entry", new_entry_path %>
-     User - <%= current_user.first_name.first %><%= current_user.last_name.first %> <!-- Display initials -->
+    <% if user_signed_in? %>
+      User - <%= current_user.first_name&.first || "" %><%= current_user.last_name&.first || "" %>
+    <% end %>
   </div>
   <div class="right-col">
     <% if user_signed_in? %>
