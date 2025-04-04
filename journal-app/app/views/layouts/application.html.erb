@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>RubyLearnJounral</title>
+   <title>ProShare - Journalling App</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
    <%= csrf_meta_tags %>
    <%= csp_meta_tag %>
@@ -11,7 +11,14 @@
  </head>
 
  <body>
-   <%= render '/shared/navbar' %>
-   <%= yield %>
+  <%= render '/shared/navbar' %>
+
+  <!-- Content area below the navbar -->
+  <div class="content" id="content">
+    <%= yield %> <!-- Main content here -->
+
+    <!-- Sidebar -->
+    <%= render 'shared/sidebar' %>
+  </div>
  </body>
 </html>
