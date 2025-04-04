@@ -3,16 +3,34 @@
     <%= link_to image_tag("ps_logo.png", id: "toggleSidebar", alt: "ProShare Logo"), "#", class: "sidebar-toggle" %>
   </div>
   <div class="center-col">
-    <%= link_to "Create new entry", new_entry_path %>
-    <% if user_signed_in? %>
-      User - <%= current_user.first_name&.first || "" %><%= current_user.last_name&.first || "" %>
+    <% if current_page?(new_entry_path) %>
+      <!-- Show the input field for the new entry name on the /entries/new page -->
+      <%= form_with(model: @entry, url: entries_path, method: :post, id: "new-entry-form", class: "auto-save-form") do |form| %>
+        <%= form.text_field :name, placeholder: "Enter entry name", class: "form-input editable", id: "entry-name-input", data: { placeholder: "Enter entry name" } %>
+      <% end %>
+    <% elsif @entry.present? && @entry.persisted? %>
+      <!-- Show the entry name and edit form for existing entries -->
+      <h2 id="entry-name" class="editable"><%= @entry.name %></h2>
+      <%= form_with(model: @entry, url: entry_path(@entry), method: :patch, id: "edit-entry-form", class: "hidden auto-save-form") do |form| %>
+        <%= form.text_field :name, value: @entry.name, class: "form-input auto-save-input" %>
+      <% end %>
     <% end %>
   </div>
   <div class="right-col">
     <% if user_signed_in? %>
-        <div class="sign-out-button">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+      <%= link_to new_entry_path, class: "navbar-button square-button", id: "new-entry-button", title: "Create New Entry" do %>
+        +
+      <% end %>
+      <div class="dropdown">
+        <button id="dropdown-toggle" class="navbar-button">
+          <%= "#{current_user.first_name&.first}#{current_user.last_name&.first}" %>
+        </button>
+        <div id="dropdown-menu" class="dropdown-menu hidden">
+          <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to 'Settings', '#', class: 'dropdown-item' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
         </div>
+      </div>
     <% else %>
       <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
     <% end %>

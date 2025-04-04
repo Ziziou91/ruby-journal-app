@@ -14,23 +14,125 @@
 
   .left-col {
     flex: 0 0 16.6667%; // 2/12 columns
-    display: flex;       // Enable Flexbox
-    align-items: center; // Vertically center the content
-    justify-content: flex-start; // Keep the image aligned to the left
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .center-col {
     flex: 0 0 66.6667%; // 8/12 columns
-    text-align: center;
+    text-align: left;
+
+    .auto-save-form {
+      margin: 0;
+    }
+
+    .form-input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid white;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      outline: none;
+    }
+
+    .editable {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1.5rem;
+      color: white;
+      border: none;
+      outline: none;
+      text-align: left;
+      width: 100%; /* Ensure it spans the same width as the <h2> */
+    }
+
+    .editable::placeholder {
+      color: rgba(255, 255, 255, 1); /* Placeholder styling */
+    }
   }
 
   .right-col {
-    flex: 0 0 16.6667%; // 2/12 columns
-    text-align: right;
+    display: flex; /* Use Flexbox to align items horizontally */
+    align-items: center; /* Vertically center the buttons */
+    justify-content: flex-end; /* Align items to the right edge */
+    gap: 10px; /* Add spacing between the buttons */
   }
 }
 
 .navbar img {
   max-height: 40px;
   height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0; /* Align to the right */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+  padding: 0.5rem 0;
+  display: block; /* Ensure it's visible when not hidden */
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.navbar-button {
+  background-color: white;
+  color: #648FFF;
+  border: 1px solid #ddd;
+  border-radius: 50%; /* Make buttons round */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.navbar-button:hover {
+  background-color: #f8f9fa; /* Light gray background on hover */
+  color: #000; /* Darker text color on hover */
+}
+
+.navbar-button:active {
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+.square-button {
+  border-radius: 4px; /* Make the button square with slightly rounded corners */
 }
