@@ -29,31 +29,24 @@
 
     .form-input {
       background-color: transparent;
-      border: none;
       border-bottom: 2px solid white;
       color: white;
-      font-size: 1.5rem;
       font-weight: bold;
-      padding: 0;
-      margin: 0;
-      height: 1.5rem;
+      height: 2rem;
       line-height: 1.5rem;
-      outline: none;
     }
 
     .editable {
-      font-size: 1.5rem;
-      font-weight: bold;
-      line-height: 1.5rem;
-      color: white;
+      font-size: 1.7rem;
+      line-height: 1.7rem;
       border: none;
       outline: none;
       text-align: left;
-      width: 100%; /* Ensure it spans the same width as the <h2> */
+      width: 100%;
     }
 
     .editable::placeholder {
-      color: rgba(255, 255, 255, 1); /* Placeholder styling */
+      color: rgba(255, 255, 255, 1);
     }
   }
 
@@ -81,8 +74,8 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 100%; /* Position below the button */
-  right: 0; /* Align to the right */
+  top: 100%;
+  right: 0;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -90,7 +83,7 @@
   z-index: 1000;
   min-width: 150px;
   padding: 0.5rem 0;
-  display: block; /* Ensure it's visible when not hidden */
+  display: block;
 }
 
 .dropdown-item {
@@ -103,14 +96,14 @@
 
 .dropdown-item:hover {
   background-color: #f8f9fa;
-  color: #000;
+  color: #374f8a;
 }
 
 .navbar-button {
   background-color: white;
   color: #648FFF;
   border: 1px solid #ddd;
-  border-radius: 50%; /* Make buttons round */
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   display: flex;
@@ -125,8 +118,8 @@
 }
 
 .navbar-button:hover {
-  background-color: #f8f9fa; /* Light gray background on hover */
-  color: #000; /* Darker text color on hover */
+  background-color: #f8f9fa;
+  color: #374f8a;
 }
 
 .navbar-button:active {

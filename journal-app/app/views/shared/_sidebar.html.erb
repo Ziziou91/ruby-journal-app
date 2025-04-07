@@ -1,6 +1,18 @@
 <div id="sidebar" class="sidebar hidden">
-    <p>"Sidebar content goes here"</p>
-    <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
-    <br/>
-    <%= link_to "New Entry", new_entry_path %>
+  <div class="sidebar-buttons">
+    <button id="recent-entries-btn" class="sidebar-toggle-btn active">Recent Entries</button>
+    <button id="all-entries-btn" class="sidebar-toggle-btn">All Entries</button>
+  </div>
+  <div id="sidebar-content">
+    <!-- Default content: Recent Entries -->
+    <h3>Recent Entries</h3>
+    <div id="recent-entries">
+      <%= render partial: "shared/sidebar_component", collection: @entries %>
+    </div>
+    <div id="all-entries" class="hidden">
+      <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
+      <br/>
+      <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
+    </div>
+  </div>
 </div>
