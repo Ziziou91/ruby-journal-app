@@ -1,11 +1,14 @@
 class EntriesController < ApplicationController
   def index
     @entries = Entry.all
-    @entry = nil # Clear @entry when not on the show page
+    @entries.each do |entry|
+      entry.start_time = entry.created_at if entry.respond_to?(:start_time=)
+    end
+    @entry = nil
   end
 
   def show
-    @entry = Entry.find(params[:id]) # Set @entry only for the show action
+    @entry = Entry.find(params[:id])
   end
 
   def new

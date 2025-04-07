@@ -1,0 +1,112 @@
+.sidebar-calendar {
+  max-height: 400px; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative; /* Ensure proper positioning */
+  font-size: 14px; /* Match font size with the rest of the app */
+  color: #ffffff; /* Match text color with the sidebar */
+  border-radius: 8px; /* Add rounded corners for consistency */
+  padding: 10px; /* Add padding for spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  max-width: 100%; /* Ensure the calendar does not exceed the sidebar width */
+  box-sizing: border-box; /* Include padding and borders in the width calculation */
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.sidebar-calendar table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.sidebar-calendar .simple-calendar {
+  width: 100%; /* Ensure the calendar table fits within the container */
+}
+
+.sidebar-calendar table {
+  table-layout: fixed;
+  width: 100%; /* Ensure the table does not exceed the container width */
+  border-collapse: collapse;
+  background-color: #ffffff; /* Add a white background for the calendar table */
+}
+
+.sidebar-calendar th,
+.sidebar-calendar td {
+  padding: 10px; /* Add consistent padding */
+  text-align: center;
+  font-size: 14px; /* Match font size with the rest of the app */
+  color: #34495e; /* Use a darker text color for readability */
+  border: 1px solid #ddd; /* Add subtle borders for table cells */
+}
+
+.sidebar-calendar th {
+  background-color: #ecf0f1; /* Light gray background for table headers */
+  font-weight: bold;
+  color: #2c3e50; /* Darker text color for headers */
+}
+
+.sidebar-calendar .day {
+  height: 60px; /* Increase height for better spacing */
+  overflow: hidden;
+  background-color: #f8f9fa; /* Light gray background for days */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar-calendar .day:hover {
+  background-color: #dfe6e9; /* Slightly darker background on hover */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.sidebar-calendar .today {
+  background-color: #f39c12; /* Highlight today's date with a vibrant color */
+  font-weight: bold;
+  color: #ffffff; /* Ensure text is readable */
+  border-radius: 4px; /* Add rounded corners for today's highlight */
+}
+
+.sidebar-calendar .event {
+  background-color: #3498db; /* Match app's primary color for events */
+  color: #ffffff; /* White text for contrast */
+  border-radius: 4px; /* Add rounded corners to events */
+  padding: 4px 6px; /* Add padding for event labels */
+  font-size: 12px; /* Slightly smaller font for events */
+  margin-top: 4px; /* Add spacing between events */
+  display: inline-block; /* Ensure events are inline */
+}
+
+.sidebar-calendar .event:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Calendar date styling */
+/* Calendar styling */
+.simple-calendar .day {
+  position: relative;
+  height: 32px;
+  min-height: 32px;
+}
+
+.calendar-date {
+  position: relative;
+  z-index: 2;
+}
+
+.cell-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Style for days with a single entry */
+.cell-background.single-entry {
+  background-color: #FFB000;
+}
+
+/* Style for days with multiple entries */
+.cell-background.multiple-entries {
+  background-color: #FE6100;
+}

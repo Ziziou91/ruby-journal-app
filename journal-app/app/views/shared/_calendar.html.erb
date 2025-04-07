@@ -1,0 +1,11 @@
+<!-- app/views/shared/_calendar_month.html.erb -->
+<%= month_calendar(events: events, start_date: date) do |date, events| %>
+  <div class="calendar-date">
+    <%= date.day %>
+  </div>
+  <% events.each do |event| %>
+    <div class="calendar-event">
+      <%= event.title %>
+    </div>
+  <% end %>
+<% end %>
