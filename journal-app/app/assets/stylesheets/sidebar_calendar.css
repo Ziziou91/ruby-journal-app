@@ -4,7 +4,6 @@
   position: relative; /* Ensure proper positioning */
   font-size: 14px; /* Match font size with the rest of the app */
   color: #ffffff; /* Match text color with the sidebar */
-  background-color: #2c3e50; /* Match sidebar background color */
   border-radius: 8px; /* Add rounded corners for consistency */
   padding: 10px; /* Add padding for spacing */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
@@ -78,4 +77,36 @@
 .sidebar-calendar .event:hover {
   background-color: #2980b9; /* Darker shade on hover */
   transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Calendar date styling */
+/* Calendar styling */
+.simple-calendar .day {
+  position: relative;
+  height: 32px;
+  min-height: 32px;
+}
+
+.calendar-date {
+  position: relative;
+  z-index: 2;
+}
+
+.cell-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Style for days with a single entry */
+.cell-background.single-entry {
+  background-color: #FFB000;
+}
+
+/* Style for days with multiple entries */
+.cell-background.multiple-entries {
+  background-color: #FE6100;
 }

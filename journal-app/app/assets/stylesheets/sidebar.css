@@ -59,7 +59,7 @@
   .sidebar-toggle-btn {
     flex: 1;
     padding: 0.5rem;
-    background-color: #648FFF; /* Default background color */
+    background-color: white; /* Active background color */
     color: white; /* Default text color */
     border: none;
     cursor: pointer;
@@ -73,7 +73,8 @@
   }
 
   .sidebar-toggle-btn.active {
-    background-color: white; /* Active background color */
+    background-color: #648FFF; /* Default background color */
+
     color: #648FFF; /* Active text color */
   }
 
@@ -81,3 +82,10 @@
     background-color: #4a6fcc; /* Slightly darker blue on hover */
     color: white; /* Ensure text remains white on hover */
 }
+
+.button-icon {
+    width: 20px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    display: inline-block;
+    vertical-align: middle;
+  }

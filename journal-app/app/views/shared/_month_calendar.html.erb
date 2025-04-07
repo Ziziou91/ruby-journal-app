@@ -1,0 +1,19 @@
+<%= month_calendar(
+      events: events,
+      start_date: start_date,
+      day_names: %w[S M T W T F S] # Single-letter day names
+    ) do |date, entries| %>
+  <% css_class = if entries.size == 1
+                  "single-entry"
+                elsif entries.size > 1
+                  "multiple-entries"
+                else
+                  ""
+                end %>
+  <div class="calendar-date">
+    <%= date.day %>
+  </div>
+
+  <!-- Add this empty div with a class to color the cell -->
+  <div class="cell-background <%= css_class %>"></div>
+<% end %>

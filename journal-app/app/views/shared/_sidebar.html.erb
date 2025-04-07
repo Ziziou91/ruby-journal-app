@@ -1,79 +1,56 @@
 <div id="sidebar" class="sidebar hidden">
   <div class="sidebar-buttons">
-    <button id="recent-entries-btn" class="sidebar-toggle-btn active">Recent Entries</button>
-    <button id="all-entries-btn" class="sidebar-toggle-btn">All Entries</button>
+    <!-- Button for Recent Entries with List Icon -->
+    <button id="recent-entries-btn" class="sidebar-toggle-btn active">
+      <%= image_tag "list.png", alt: "List", class: "button-icon active-icon" %>
+      <%= image_tag "list-blue.png", alt: "List", class: "button-icon inactive-icon hidden" %>
+    </button>
+
+    <!-- Button for All Entries with Calendar Icon -->
+    <button id="all-entries-btn" class="sidebar-toggle-btn">
+      <%= image_tag "calendar.png", alt: "Calendar", class: "button-icon active-icon hidden" %>
+      <%= image_tag "calendar-blue.png", alt: "Calendar", class: "button-icon inactive-icon" %>
+    </button>
   </div>
 
   <div id="sidebar-content">
     <!-- Default content: Recent Entries -->
-    <h3>Recent Entries</h3>
     <div id="recent-entries">
+      <h3>Recent Entries</h3>
       <%= render partial: "shared/sidebar_component", collection: @entries %>
-    </div>
-
-    <div id="all-entries" class="hidden">
       <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
-      <br/>
+      <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
 
+    </div>
+    <div id="all-entries" class="hidden">
       <!-- Scrollable container -->
       <div class="sidebar-calendar-container overflow-y-scroll" style="height: 500px;">
         <!-- Calendar wrapper for styling -->
         <div class="sidebar-calendar">
           <div id="infinite-calendar" data-current-month="<%= Date.today.beginning_of_month %>">
 
-          <!-- Previous Month -->
-          <%= month_calendar(
-                events: @events,
-                start_date: Date.today.beginning_of_month - 1.month,
-                day_names: %w[S M T W T F S] # Single-letter day names
-              ) do |date, events| %>
-            <div class="calendar-date">
-              <%= date.day %>
-            </div>
-            <% events.each do |event| %>
-              <div class="calendar-event">
-                <%= event.title %>
-              </div>
-            <% end %>
-          <% end %>
+            <!-- Previous Month -->
+            <%= render partial: "shared/month_calendar", locals: {
+              start_date: Date.today.beginning_of_month - 1.month,
+              events: @entries
+            } %>
 
-          <!-- Current Month -->
-          <%= month_calendar(
-                events: @events,
-                start_date: Date.today.beginning_of_month,
-                day_names: %w[S M T W T F S] # Single-letter day names
-              ) do |date, events| %>
-            <div class="calendar-date">
-              <%= date.day %>
-            </div>
-            <% events.each do |event| %>
-              <div class="calendar-event">
-                <%= event.title %>
-              </div>
-            <% end %>
-          <% end %>
+            <!-- Current Month -->
+            <%= render partial: "shared/month_calendar", locals: {
+              start_date: Date.today.beginning_of_month,
+              events: @events
+            } %>
 
-          <!-- Next Month -->
-          <%= month_calendar(
-                events: @events,
-                start_date: Date.today.beginning_of_month + 1.month,
-                day_names: %w[S M T W T F S] # Single-letter day names
-              ) do |date, events| %>
-            <div class="calendar-date">
-              <%= date.day %>
-            </div>
-            <% events.each do |event| %>
-              <div class="calendar-event">
-                <%= event.title %>
-              </div>
-            <% end %>
-          <% end %>
+            <!-- Next Month -->
+            <%= render partial: "shared/month_calendar", locals: {
+              start_date: Date.today.beginning_of_month + 1.month,
+              events: @events
+            } %>
 
           </div>
         </div>
       </div>
 
-      <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
     </div>
   </div>
 </div>

@@ -21,20 +21,36 @@ document.addEventListener("turbo:load", () => {
   const allEntriesContent = document.getElementById("all-entries");
 
   if (recentEntriesBtn && allEntriesBtn && recentEntriesContent && allEntriesContent) {
-    // Show Recent Entries when the "Recent Entries" button is clicked
     recentEntriesBtn.addEventListener("click", () => {
-      recentEntriesContent.classList.remove("hidden");
-      allEntriesContent.classList.add("hidden");
+      // Toggle active class on buttons
       recentEntriesBtn.classList.add("active");
       allEntriesBtn.classList.remove("active");
+
+      // Toggle content visibility
+      recentEntriesContent.classList.remove("hidden");
+      allEntriesContent.classList.add("hidden");
+
+      // Toggle icon visibility
+      recentEntriesBtn.querySelector(".active-icon").classList.remove("hidden");
+      recentEntriesBtn.querySelector(".inactive-icon").classList.add("hidden");
+      allEntriesBtn.querySelector(".active-icon").classList.add("hidden");
+      allEntriesBtn.querySelector(".inactive-icon").classList.remove("hidden");
     });
 
-    // Show All Entries when the "All Entries" button is clicked
     allEntriesBtn.addEventListener("click", () => {
-      allEntriesContent.classList.remove("hidden");
-      recentEntriesContent.classList.add("hidden");
+      // Toggle active class on buttons
       allEntriesBtn.classList.add("active");
       recentEntriesBtn.classList.remove("active");
+
+      // Toggle content visibility
+      allEntriesContent.classList.remove("hidden");
+      recentEntriesContent.classList.add("hidden");
+
+      // Toggle icon visibility
+      allEntriesBtn.querySelector(".active-icon").classList.remove("hidden");
+      allEntriesBtn.querySelector(".inactive-icon").classList.add("hidden");
+      recentEntriesBtn.querySelector(".active-icon").classList.add("hidden");
+      recentEntriesBtn.querySelector(".inactive-icon").classList.remove("hidden");
     });
   }
 });
