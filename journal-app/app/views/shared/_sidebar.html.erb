@@ -3,15 +3,76 @@
     <button id="recent-entries-btn" class="sidebar-toggle-btn active">Recent Entries</button>
     <button id="all-entries-btn" class="sidebar-toggle-btn">All Entries</button>
   </div>
+
   <div id="sidebar-content">
     <!-- Default content: Recent Entries -->
     <h3>Recent Entries</h3>
     <div id="recent-entries">
       <%= render partial: "shared/sidebar_component", collection: @entries %>
     </div>
+
     <div id="all-entries" class="hidden">
       <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
       <br/>
+
+      <!-- Scrollable container -->
+      <div class="sidebar-calendar-container overflow-y-scroll" style="height: 500px;">
+        <!-- Calendar wrapper for styling -->
+        <div class="sidebar-calendar">
+          <div id="infinite-calendar" data-current-month="<%= Date.today.beginning_of_month %>">
+
+          <!-- Previous Month -->
+          <%= month_calendar(
+                events: @events,
+                start_date: Date.today.beginning_of_month - 1.month,
+                day_names: %w[S M T W T F S] # Single-letter day names
+              ) do |date, events| %>
+            <div class="calendar-date">
+              <%= date.day %>
+            </div>
+            <% events.each do |event| %>
+              <div class="calendar-event">
+                <%= event.title %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <!-- Current Month -->
+          <%= month_calendar(
+                events: @events,
+                start_date: Date.today.beginning_of_month,
+                day_names: %w[S M T W T F S] # Single-letter day names
+              ) do |date, events| %>
+            <div class="calendar-date">
+              <%= date.day %>
+            </div>
+            <% events.each do |event| %>
+              <div class="calendar-event">
+                <%= event.title %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <!-- Next Month -->
+          <%= month_calendar(
+                events: @events,
+                start_date: Date.today.beginning_of_month + 1.month,
+                day_names: %w[S M T W T F S] # Single-letter day names
+              ) do |date, events| %>
+            <div class="calendar-date">
+              <%= date.day %>
+            </div>
+            <% events.each do |event| %>
+              <div class="calendar-event">
+                <%= event.title %>
+              </div>
+            <% end %>
+          <% end %>
+
+          </div>
+        </div>
+      </div>
+
       <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
     </div>
   </div>

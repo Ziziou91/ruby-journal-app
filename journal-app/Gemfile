@@ -20,11 +20,16 @@ gem "jbuilder"
 # Flexible authentication solution for Rails with Warden
 gem "devise", "~> 4.9", ">= 4.9.3"
 
+gem "stringio", "3.1.6"
+
 # Integrate SassC-Ruby into Rails.
 gem "sassc-rails", "~> 2.1", ">= 2.1.2"
 
 # Bootstrap for styling
 gem "bootstrap", "~> 5.3.3"
+
+# Bootstrap for styling
+gem "simple_calendar", "~> 3.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
