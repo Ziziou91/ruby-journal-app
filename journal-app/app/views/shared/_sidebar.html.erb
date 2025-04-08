@@ -14,42 +14,50 @@
   </div>
 
   <div id="sidebar-content">
-    <!-- Default content: Recent Entries -->
-    <div id="recent-entries">
-      <h3>Recent Entries</h3>
-      <%= render partial: "shared/sidebar_component", collection: Entry.order(created_at: :desc).limit(5) %>
-      <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
-      <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
-    </div>
-    <div id="all-entries" class="hidden">
-      <!-- Scrollable container -->
-      <div class="sidebar-calendar-container overflow-y-scroll" style="height: 500px;">
-        <!-- Calendar wrapper for styling -->
-        <div class="sidebar-calendar">
-          <div id="infinite-calendar" data-current-month="<%= Date.today.beginning_of_month %>">
+    <% if user_signed_in? %>
+      <!-- Default content: Recent Entries -->
+      <div id="recent-entries">
+        <h3>Recent Entries</h3>
+        <%= render partial: "shared/sidebar_component", collection: Entry.order(created_at: :desc).limit(5) %>
+        <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
+        <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
+      </div>
+      <div id="all-entries" class="hidden">
+        <!-- Scrollable container -->
+        <div class="sidebar-calendar-container overflow-y-scroll" style="height: 500px;">
+          <!-- Calendar wrapper for styling -->
+          <div class="sidebar-calendar">
+            <div id="infinite-calendar" data-current-month="<%= Date.today.beginning_of_month %>">
 
-            <!-- Previous Month -->
-            <%= render partial: "shared/month_calendar", locals: {
-              start_date: Date.today.beginning_of_month - 1.month,
-              events: @entries
-            } %>
+              <!-- Previous Month -->
+              <%= render partial: "shared/month_calendar", locals: {
+                start_date: Date.today.beginning_of_month - 1.month,
+                events: @entries
+              } %>
 
-            <!-- Current Month -->
-            <%= render partial: "shared/month_calendar", locals: {
-              start_date: Date.today.beginning_of_month,
-              events: @entries
-            } %>
+              <!-- Current Month -->
+              <%= render partial: "shared/month_calendar", locals: {
+                start_date: Date.today.beginning_of_month,
+                events: @entries
+              } %>
 
-            <!-- Next Month -->
-            <%= render partial: "shared/month_calendar", locals: {
-              start_date: Date.today.beginning_of_month + 1.month,
-              events: @entries
-            } %>
+              <!-- Next Month -->
+              <%= render partial: "shared/month_calendar", locals: {
+                start_date: Date.today.beginning_of_month + 1.month,
+                events: @entries
+              } %>
 
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
+    <% else %>
+      <!-- Show Login and Sign Up buttons when the user isn't signed in -->
+      <div id="auth-links">
+        <h3>Welcome!</h3>
+        <%= link_to "Login", new_user_session_path, class: "sidebar-link" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "sidebar-link" %>
+      </div>
+    <% end %>
   </div>
 </div>
