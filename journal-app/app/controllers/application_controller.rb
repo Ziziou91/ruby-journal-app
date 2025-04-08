@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_sidebar_entries
-    @entries = Entry.order(created_at: :desc) # Fetch all entries
+    @entries = Entry.order(created_at: :desc)
   end
 end

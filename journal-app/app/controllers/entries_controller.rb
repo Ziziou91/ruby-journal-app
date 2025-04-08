@@ -2,11 +2,16 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    # Fetch entries created by the user or shared with the user
     @entries = Entry.left_joins(:shared_entries)
                     .where(user: current_user)
                     .or(Entry.where(shared_entries: { user_id: current_user.id }))
                     .distinct
+
+    if params[:filter] == "user"
+      @show_entries = @entries.where(user_id: current_user.id)
+    else
+      @show_entries = @entries
+    end
   end
 
   def show
@@ -30,10 +35,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    # Ensure the user has access to edit the entry
-    unless @entry.user == current_user
-      redirect_to entries_path, alert: "You can only edit your own entries."
-    end
+    @entry = Entry.find(params[:id])
   end
 
   def update

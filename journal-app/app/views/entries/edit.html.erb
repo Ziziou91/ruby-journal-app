@@ -1,0 +1,38 @@
+<h1><%= @entry.user == current_user ? "Edit Entry" : "View Entry" %></h1>
+<div>
+  <%= link_to "Back to All Entries", entries_path, class: "button" %>
+</div>
+<% if @entry.user == current_user %>
+  <!-- Editable form for the entry owner -->
+  <%= form_with(model: @entry, local: true) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :link %>
+      <%= form.text_field :link %>
+    </div>
+
+    <div>
+      <%= form.submit "Update Entry" %>
+    </div>
+  <% end %>
+<% else %>
+  <!-- Read-only view for non-owners -->
+  <div>
+    <strong>Name:</strong>
+    <p><%= @entry.name %></p>
+  </div>
+
+  <div>
+    <strong>Link:</strong>
+    <p><%= @entry.link %></p>
+  </div>
+
+  <div>
+    <strong>Owner:</strong>
+    <p><%= @entry.user || "Unknown User" %></p>
+  </div>
+<% end %>
