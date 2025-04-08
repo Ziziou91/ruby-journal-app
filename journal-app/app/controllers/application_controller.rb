@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_entry, only: [ :show, :index ]
   before_action :set_sidebar_entries
 
   protected
@@ -15,11 +14,8 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  def set_entry
-    @entry = Entry.find(params[:id]) if params[:id].present?
-  end
 
   def set_sidebar_entries
-    @entries = Entry.order(created_at: :desc).limit(5) # Adjust the query as needed
+    @entries = Entry.order(created_at: :desc) # Fetch all entries
   end
 end
