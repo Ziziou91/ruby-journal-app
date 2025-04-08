@@ -1,14 +1,16 @@
 class EntriesController < ApplicationController
+  before_action :set_entry, only: [ :show, :index ]
+
   def index
     @entries = Entry.all
     @entries.each do |entry|
       entry.start_time = entry.created_at if entry.respond_to?(:start_time=)
     end
-    @entry = nil
+    # @entry is set by the `set_entry` callback if `params[:id]` is present
   end
 
   def show
-    @entry = Entry.find(params[:id])
+    # @entry is set by the `set_entry` callback
   end
 
   def new
@@ -39,6 +41,10 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  def set_entry
+    @entry = Entry.find(params[:id]) if params[:id].present?
+  end
 
   def entry_params
     params.require(:entry).permit(:name, :link)

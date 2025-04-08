@@ -17,10 +17,9 @@
     <!-- Default content: Recent Entries -->
     <div id="recent-entries">
       <h3>Recent Entries</h3>
-      <%= render partial: "shared/sidebar_component", collection: @entries %>
+      <%= render partial: "shared/sidebar_component", collection: Entry.order(created_at: :desc).limit(5) %>
       <%= link_to "View All Entries", root_path, class: "sidebar-link" %>
       <%= link_to "New Entry", new_entry_path, class: "sidebar-link" %>
-
     </div>
     <div id="all-entries" class="hidden">
       <!-- Scrollable container -->
@@ -38,13 +37,13 @@
             <!-- Current Month -->
             <%= render partial: "shared/month_calendar", locals: {
               start_date: Date.today.beginning_of_month,
-              events: @events
+              events: @entries
             } %>
 
             <!-- Next Month -->
             <%= render partial: "shared/month_calendar", locals: {
               start_date: Date.today.beginning_of_month + 1.month,
-              events: @events
+              events: @entries
             } %>
 
           </div>

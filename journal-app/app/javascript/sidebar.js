@@ -7,7 +7,6 @@ document.addEventListener("turbo:load", () => {
   if (toggleBtn && sidebar && content) {
     toggleBtn.addEventListener("click", (e) => {
       e.preventDefault(); // Prevent navigation (if using link_to)
-
       sidebar.classList.toggle("visible");
       sidebar.classList.remove("hidden"); // Ensure it's visible after the first toggle
       content.classList.toggle("shifted");
