@@ -2,7 +2,9 @@
   <h1 class="entry-title"><%= @entry.name %></h1>
 
   <div class="entry-details">
+    <p><strong>Name:</strong> <%= @entry.name %></p>
     <p><strong>Link:</strong> <%= @entry.link %></p>
+    <p><strong>Owner:</strong> <%= @entry.user || "Unknown User" %></p> <!-- Display "Unknown User" if no user is associated -->
   </div>
 
   <div class="entry-form">
@@ -24,8 +26,24 @@
     <% end %>
   </div>
 
+  <% if @entry.user == current_user %>
+    <div class="share-entry-form">
+      <%= form_with(model: @entry, url: entry_path(@entry), method: :patch, local: true) do |form| %>
+        <div class="field">
+          <%= form.label :shared_user_ids, "Share with Users" %>
+          <%= form.collection_select :shared_user_ids, User.where.not(id: current_user.id), :id, :email, {}, { multiple: true } %>
+        </div>
+        <div class="actions">
+          <%= form.submit "Share Entry" %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p><em>This entry is read-only.</em></p>
+  <% end %>
+
   <div class="entry-navigation">
-    <%= link_to "Back to Entries", root_path, class: "btn btn-secondary" %>
+    <%= link_to "Back to Entries", entries_path, class: "button" %>
     <%= link_to "View Entry", @entry, class: "btn btn-info" %>
   </div>
 </div>

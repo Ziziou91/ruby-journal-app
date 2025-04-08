@@ -1,0 +1,22 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name, "Entry Name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link, "Entry Link" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <% if entry.user == current_user %>
+    <div class="field">
+      <%= form.label :shared_user_ids, "Share with Users" %>
+      <%= form.collection_select :shared_user_ids, User.where.not(id: current_user.id), :id, :email, {}, { multiple: true } %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
