@@ -19,6 +19,33 @@
  @import "entry.css";
  @import "navbar.scss";
 
+ @font-face {
+  font-family: 'GT America';
+  src: url('/assets/GT-America-Standard-Regular-Trial.woff2') format('woff2'),
+       url('/assets/GT-America-Standard-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT America';
+  src: url('/assets/GT-America-Standard-Bold-Trial.woff2') format('woff2'),
+       url('/assets/GT-America-Standard-Bold-Trial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT America';
+  src: url('/assets/GT-America-Standard-Italic-Trial.woff2') format('woff2'),
+       url('/assets/GT-America-Standard-Italic-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+  font-family: 'GT America', sans-serif;
+}
 body {
   background-color: #e0e0e0; /* White background */
 }
