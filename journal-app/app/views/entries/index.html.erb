@@ -1,4 +1,24 @@
-<h1>All Entries</h1>
-<div>
-  <%= render partial: "shared/entry", collection: @entries %>
-</div>
+<main>
+  <div class="top-box">
+    <%= link_to 'My Entries', entries_path(filter: 'user'), class: "left-half #{params[:filter] == 'user' ? 'active' : ''}" %>
+    <%= link_to 'All Entries', entries_path(filter: 'all'), class: "right-half #{params[:filter] != 'user' ? 'active' : ''}" %>
+  </div>
+
+  <h1 class="sr-only"><%= params[:filter] == 'user' ? 'My Entries' : 'All Entries' %></h1>
+
+  <div id="entries-container">
+    <% entry_count = 0 %> <!-- Initialize a counter variable -->
+    <% @show_entries.sort_by { |entry| entry.created_at }.reverse.group_by { |entry| [entry.created_at.year, entry.created_at.month] }.each do |(year, month), entries_by_month| %>
+      <h1><%= "#{Date::MONTHNAMES[month]} #{year}" %></h1> <!-- Display the month and year as a heading -->
+      <% entries_by_month.group_by { |entry| entry.created_at.to_date }.each do |date, entries| %>
+        <h2><%= "#{date.strftime('%A')} #{day_with_suffix(date.day)}" %></h2> <!-- Display the day of the week and day with suffix -->
+        <% entries.each do |entry| %>
+          <% entry_count += 1 %> <!-- Increment the counter for each entry -->
+          <div class="entry <%= entry_count.odd? ? 'odd' : 'even' %>">
+            <%= render partial: "shared/entry", locals: { entry: entry } %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</main>

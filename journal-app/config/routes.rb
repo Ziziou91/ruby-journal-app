@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "entries#index"
 
   # Entry resource routes
-  resources :entries, only: [ :create, :new, :destroy, :show, :edit, :update ]
+  resources :entries, only: [ :index, :create, :new, :destroy, :show, :edit, :update ]
 
   # Devise routes for user authentication
   devise_for :users
