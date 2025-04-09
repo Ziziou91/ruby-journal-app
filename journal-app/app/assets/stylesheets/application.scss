@@ -101,7 +101,7 @@ main {
   text-decoration: none;
 }
 
-/* Screen reader-only class */
+/* Screen reader-only class - make the button clicked on in main view the h1 tag */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -115,6 +115,6 @@ main {
 }
 
 #entries-container {
-  background-color: #ffffff; /* Set background color to white */
+  background-color: #ffffff;
   padding-top: 20px;
 }

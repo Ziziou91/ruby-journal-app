@@ -1,7 +1,7 @@
 .content {
-    transition: margin-left 0.3s ease; /* Smooth transition when content moves */
+    transition: margin-left 0.3s ease;
   }
 
   .content.shifted {
-    margin-left: 250px; /* Move the content to the right when sidebar is visible */
+    margin-left: 250px;
   }
