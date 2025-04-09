@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # Entry resource routes
   resources :entries, only: [ :index, :create, :new, :destroy, :show, :edit, :update ]
 
+  resources :entries do
+    post :share, on: :member
+  end
+
+
   # Devise routes for user authentication
   devise_for :users
   devise_scope :user do

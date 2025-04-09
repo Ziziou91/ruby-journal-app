@@ -19,6 +19,17 @@
       <%= form.submit "Update Entry" %>
     </div>
   <% end %>
+  <h2>Share Entry</h2>
+  <%= form_with(url: share_entry_path(@entry), method: :post, local: true) do |form| %>
+    <div>
+      <%= form.label :user_id, "Share with:" %>
+      <%= form.select :user_id, options_from_collection_for_select(@users, :id, :email), prompt: "Select a user" %>    </div>
+
+    <div>
+      <%= form.submit "Share Entry" %>
+    </div>
+  <% end %>
+
 <% else %>
   <!-- Read-only view for non-owners -->
   <div>
