@@ -1,6 +1,7 @@
 <div class="entry-container">
   <h1 class="sr-only"><%= @entry.name %></h1>
   <div class="entry-details">
+    <p><%= @entry.content %></p>
     <p><strong>Link:</strong> <%= @entry.link %></p>
     <p><strong>Owner:</strong> <%= @entry.user || "Unknown User" %></p> <!-- Display "Unknown User" if no user is associated -->
   </div>
