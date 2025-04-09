@@ -1,0 +1,37 @@
+services:
+  rails-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./journal-app:/home/app/journal-app
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: ruby-journal-app-db-1
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ./journal-app/public:/home/app/journal-app/public
+    ports:
+      - "80:80"
+    depends_on:
+      - rails-app
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
