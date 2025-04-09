@@ -1,8 +1,6 @@
 <div class="entry-container">
-  <h1 class="entry-title"><%= @entry.name %></h1>
-
+  <h1 class="sr-only"><%= @entry.name %></h1>
   <div class="entry-details">
-    <p><strong>Name:</strong> <%= @entry.name %></p>
     <p><strong>Link:</strong> <%= @entry.link %></p>
     <p><strong>Owner:</strong> <%= @entry.user || "Unknown User" %></p> <!-- Display "Unknown User" if no user is associated -->
   </div>
@@ -27,17 +25,21 @@
   </div>
 
   <% if @entry.user == current_user %>
-    <div class="share-entry-form">
-      <%= form_with(model: @entry, url: entry_path(@entry), method: :patch, local: true) do |form| %>
-        <div class="field">
-          <%= form.label :shared_user_ids, "Share with Users" %>
-          <%= form.collection_select :shared_user_ids, User.where.not(id: current_user.id), :id, :email, {}, { multiple: true } %>
+      <h2>Share Entry</h2>
+      <%= form_with(url: share_entry_path(@entry), method: :post, local: true) do |form| %>
+        <div>
+          <%= form.label :user_id, "Share with:" %>
+          <%= form.select :user_id, options_from_collection_for_select(@users, :id, :email), prompt: "Select a user" %>
         </div>
-        <div class="actions">
+
+        <div>
           <%= form.submit "Share Entry" %>
+          <% if flash[:notice] %>
+            <span class="success-message"><%= flash[:notice] %></span>
+          <% end %>
         </div>
       <% end %>
-    </div>
+
   <% else %>
     <p><em>This entry is read-only.</em></p>
   <% end %>

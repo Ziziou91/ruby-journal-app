@@ -6,12 +6,12 @@
     <% if current_page?(new_entry_path) %>
       <!-- Show the input field for the new entry name on the /entries/new page -->
       <%= form_with(model: @entry, url: entries_path, method: :post, id: "new-entry-form", class: "auto-save-form") do |form| %>
-        <%= form.text_field :name, placeholder: "Enter entry name", class: "form-input editable auto-save-input", id: "entry-name-input", data: { placeholder: "Enter entry name" } %>
+        <%= form.text_field :name, placeholder: "Enter entry name", class: "form-input editable auto-save-input", id: "entry-name-input", data: { placeholder: "Enter entry name" }, onblur: "submitForm('new-entry-form')" %>
       <% end %>
     <% elsif @entry.present? && @entry.persisted? %>
       <!-- Show the entry name and edit form for existing entries -->
       <%= form_with(model: @entry, url: entry_path(@entry), method: :patch, id: "edit-entry-form", class: "auto-save-form") do |form| %>
-        <%= form.text_field :name, value: @entry.name, class: "form-input editable auto-save-input", id: "entry-name-input" %>
+        <%= form.text_field :name, value: @entry.name, class: "form-input editable auto-save-input", id: "entry-name-input", onblur: "submitForm('edit-entry-form')" %>
       <% end %>
     <% end %>
   </div>

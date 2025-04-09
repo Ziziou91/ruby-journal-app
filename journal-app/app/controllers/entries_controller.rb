@@ -39,6 +39,12 @@ class EntriesController < ApplicationController
     @users = User.where.not(id: current_user.id)
   end
 
+
+  def show
+    @entry = Entry.find(params[:id])
+    @users = User.where.not(id: current_user.id)
+  end
+
   def update
     if @entry.user == current_user
       if @entry.update(entry_params)
@@ -69,7 +75,7 @@ class EntriesController < ApplicationController
     else
       flash[:alert] = "Failed to share the entry."
     end
-    redirect_to edit_entry_path(@entry)
+    redirect_to @entry
   end
 
   private

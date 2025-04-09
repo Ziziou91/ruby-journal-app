@@ -4,7 +4,7 @@
 </div>
 <% if @entry.user == current_user %>
   <!-- Editable form for the entry owner -->
-  <%= form_with(model: @entry, local: true) do |form| %>
+  <%= form_with(model: @entry, method: :patch, class: "edit-entry-form") do |form| %>
     <div>
       <%= form.label :name %>
       <%= form.text_field :name %>
