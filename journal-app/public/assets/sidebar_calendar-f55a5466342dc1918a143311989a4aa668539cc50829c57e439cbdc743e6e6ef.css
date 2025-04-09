@@ -1,0 +1,111 @@
+.sidebar-calendar {
+  max-height: 400px;
+  overflow-y: auto;
+  position: relative;
+  font-size: 14px;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.sidebar-calendar table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.sidebar-calendar .simple-calendar {
+  width: 100%;
+}
+
+.sidebar-calendar table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.sidebar-calendar th,
+.sidebar-calendar td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #34495e;
+  border: 1px solid #ddd;
+}
+
+.sidebar-calendar th {
+  background-color: #ecf0f1;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.sidebar-calendar .day {
+  height: 60px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-calendar .day:hover {
+  background-color: #dfe6e9;
+  cursor: pointer;
+}
+
+.sidebar-calendar .today {
+  background-color: #785EF0  ;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.sidebar-calendar .event {
+  background-color: #3498db;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.sidebar-calendar .event:hover {
+  background-color: #2980b9;
+  transition: background-color 0.3s ease;
+}
+
+
+.simple-calendar .day {
+  position: relative;
+  height: 32px;
+  min-height: 32px;
+}
+
+.calendar-date {
+  position: relative;
+  z-index: 2;
+}
+
+.cell-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Style for days with a single entry */
+.cell-background.single-entry {
+  background-color: #FFB000;
+}
+
+/* Style for days with multiple entries */
+.cell-background.multiple-entries {
+  background-color: #FE6100;
+}

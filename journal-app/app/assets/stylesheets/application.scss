@@ -21,8 +21,8 @@
 
  @font-face {
   font-family: 'GT America';
-  src: url('/assets/GT-America-Standard-Regular-Trial.woff2') format('woff2'),
-       url('/assets/GT-America-Standard-Regular-Trial.woff') format('woff');
+  src: asset-url('GT-America-Standard-Regular-Trial.woff2') format('woff2'),
+       asset-url('GT-America-Standard-Regular-Trial.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

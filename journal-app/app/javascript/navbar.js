@@ -23,6 +23,8 @@ function submitForm(formId) {
   }
 }
 
+window.submitForm = submitForm;
+
 document.addEventListener("turbo:load", () => {
   const entryName = document.getElementById("entry-name");
   const editForm = document.getElementById("edit-entry-form");
