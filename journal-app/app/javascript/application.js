@@ -2,7 +2,7 @@
 
 import "@hotwired/turbo-rails"
 import "controllers"
-import ".entries.js"
-import "./navbar.js"
-import "./sidebar.js"
-import "./sidebar_calendar.js"
+import "entries"
+import "navbar"
+import "sidebar"
+import "sidebar_calendar"

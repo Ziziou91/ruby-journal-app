@@ -1,0 +1,91 @@
+/* app/assets/stylesheets/sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    height: calc(100% - 60px);  /* Full height minus navbar height */
+    background-color: #648FFF;
+    color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);  /* Initially hidden */
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+
+}
+
+.sidebar.hidden {
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+  .sidebar-links li {
+    margin-bottom: 0.5rem; /* Add spacing between links */
+}
+
+  .sidebar-link {
+    display: block; /* Make the entire area clickable */
+    color: white; /* Make text white */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add padding around the link */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+  .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+    color: white; /* Ensure text remains white on hover */
+}
+
+
+  .sidebar-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-toggle-btn {
+    flex: 1;
+    padding: 0.5rem;
+    background-color: white; /* Active background color */
+    color: white; /* Default text color */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+  }
+
+  .sidebar-toggle-btn:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  .sidebar-toggle-btn.active {
+    background-color: #648FFF; /* Default background color */
+
+    color: #648FFF; /* Active text color */
+  }
+
+  .sidebar-toggle-btn:hover {
+    background-color: #4a6fcc; /* Slightly darker blue on hover */
+    color: white; /* Ensure text remains white on hover */
+}
+
+.button-icon {
+    width: 20px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    display: inline-block;
+    vertical-align: middle;
+  }

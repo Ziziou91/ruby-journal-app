@@ -22,37 +22,18 @@ Follow these steps to set up the Ruby Journal App on your local machine:
 git clone <repository-url>
 cd ruby-journal-app
 ```
-### 2. Install Dependencies
-Ensure you have the following installed:
+### 2. Build and Start the Containers
+Ensure Docker and Docker Compose are installed on your machine. Then, run the following command to build and start the application:
 
-- Ruby: Version 3.x or higher
-- Rails: Version 7.x or higher
-- PostgreSQL: Ensure PostgreSQL is installed and running
-
-Install the required gems:
 ```bash
-bundle install
+docker-compose up --build
 ```
 
-### 3. Set Up the Database
-Create and migrate the database:
-```bash
-rails db:create
-rails db:migrate
-```
+Once the containers are running, visit the application in your browser at:
 
-Seed the database with test data:
-```bash
-rails db:seed
 ```
-
-### 4. Start the Rails Server
-Run the Rails server:
-```bash
-rails server
+http://localhost
 ```
-
-Visit the application in your browser at: http://localhost:3000
 
 ## Dependencies
 The Ruby Journal App relies on the following dependencies:

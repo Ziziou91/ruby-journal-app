@@ -1,6 +1,10 @@
 # Pin npm packages by running ./bin/importmap
 
 pin "application"
+pin "entries"
+pin "navbar"
+pin "sidebar"
+pin "sidebar_calendar"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"

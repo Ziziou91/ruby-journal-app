@@ -1,35 +1,40 @@
 #!/bin/bash -e
 
-#Launch db
-sudo service postgresql start
-
 # Wait for PostgreSQL to start
-until pg_isready; do
+echo "Waiting for PostgreSQL to start on ruby-journal-app-db-1..."
+until PGPASSWORD=password psql -U postgres -h ruby-journal-app-db-1 -c '\q' 2>/dev/null; do
   echo "Waiting for PostgreSQL to start..."
   sleep 1
 done
 
-# Create PostgreSQL role for the current user if it doesn't exist
-# We'll use the postgres user to create our role
-sudo -u postgres psql -c "CREATE ROLE root WITH LOGIN CREATEDB SUPERUSER PASSWORD 'password';" || true
+# Remove the server.pid file if it exists
+if [ -f tmp/pids/server.pid ]; then
+  echo "Removing existing server.pid file..."
+  rm tmp/pids/server.pid
+fi
 
-# Now we can connect and create our database
-PGPASSWORD=password psql -U root -h localhost -c "SELECT 1;" postgres || true
-
-rails db:create
+# Create the database if it doesn't exist
+echo "Ensuring database exists..."
+RAILS_ENV=development bin/rails db:create || true
 
 # Run pending migrations
 echo "Running database migrations..."
-rails db:migrate
+RAILS_ENV=development bin/rails db:migrate
 
-# Enable jemalloc for reduced memory usage and latency.
+# Seed the database
+echo "Seeding the database..."
+RAILS_ENV=development bin/rails db:seed
+
+# Enable jemalloc for reduced memory usage and latency
 if [ -z "${LD_PRELOAD+x}" ] && [ -f /usr/lib/*/libjemalloc.so.2 ]; then
   export LD_PRELOAD="$(echo /usr/lib/*/libjemalloc.so.2)"
 fi
 
-# If running the rails server then create or migrate existing database
+# If running the Rails server, prepare the database
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+  echo "Preparing the database..."
   ./bin/rails db:prepare
 fi
 
-exec "${@}"
+# Execute the provided command
+exec "$@"
