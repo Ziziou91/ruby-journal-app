@@ -44,7 +44,8 @@ puts "Seeding entries..."
   Entry.create!(
     name: Faker::Lorem.sentence(word_count: 3),
     link: Faker::Internet.url,
-    user: User.all.sample, # Randomly associate the entry with a user
+    content: Faker::Lorem.paragraph_by_chars(number: 1200, supplemental: false),
+    user: User.all.sample,
     created_at: Faker::Time.between(from: 30.days.ago, to: Time.now),
     updated_at: Faker::Time.between(from: 30.days.ago, to: Time.now)
   )
