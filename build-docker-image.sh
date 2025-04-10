@@ -1,11 +1,26 @@
 #!/bin/bash
-until ! lsof -i :3000; do
-  docker kill  $(docker ps -q --filter "expose=3000")
-  sleep 1
-done
 
-# Build journal-app docker image
-docker build -t zizou91/journal-app:latest .
+IMAGE_NAME="rails-app"
 
-# Run journal-app docker image
-docker run -e RAILS_ENV=development -p 3000:3000 -dit zizou91/journal-app:latest
+# Check if the container is running
+if ! docker ps --format '{{.Names}}' | grep -q "$IMAGE_NAME"; then
+  echo "🚫 Container '$IMAGE_NAME' is not running."
+
+  # Check if the image exists
+  if ! docker images --format '{{.Repository}}' | grep -q "$IMAGE_NAME";
+  then
+    echo "🔧 Docker image '$IMAGE_NAME' not found. Building it now..."
+    docker-compose build
+
+  fi
+  docker-compose up
+
+else
+  # Update precompiled assets
+  echo "✅ Container '$IMAGE_NAME' is running. Updating the precompiled assets 🛠️"
+  docker-compose exec rails-app bin/rails assets:precompile
+
+  # Restart the application to apply changes
+  echo "🔄 Restarting the app..."
+  docker-compose restart rails-app
+fi
